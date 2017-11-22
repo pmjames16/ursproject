@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>회원가입</h1>
+<form method="post" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" style="color: #ffcc00"><a href='home'>Sign up<a></a></button>
+</form>
+{% endblock %}
+
+<!--
+<input
+    	onClick="window.location=www.google.com"
+    	type="submit" 
+    	value="회원가입" 
+    />
+-->
