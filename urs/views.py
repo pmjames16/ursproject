@@ -7,10 +7,10 @@ from django.template import RequestContext
 
 
 def home(request):
-	return render(request, 'templates/home.html')
+	return render(request, 'home.html')
 
 def place_list(request):
-	return render(request, 'templates/place_list.html')
+	return render(request, 'place_list.html')
 
 def signup(request):
 	if request.method == "POST":
@@ -33,10 +33,22 @@ def login(request):
 		user = authenticate(username = username, password = password)
 		if user is not None:
 			login(request, user)
-			return redirect('home')
+			return redirect('/')
 		else : 
 			return HttpResponse('다시 시도해보세요')
 	else :
 		form = LoginForm()
 		return render(request, 'login.html', {'form': form})
+
+def gotobonwon(request):
+	return render(request, 'bonwon.html')
+
+def gotomoonji(request):
+	return render(request, 'moonji.html')
+
+def gotohongreung(request):
+	return render(request, 'hongreung.html')
+
+def gotodogok(request):
+	return render(request, 'dogok.html')
 

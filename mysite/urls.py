@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from urs.views import home, place_list, signup, login
+from urs.views import *
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
@@ -26,7 +26,11 @@ urlpatterns = [
     
     url(r'^signup/$', signup, name = 'signup'),
     url(r'^accounts/login/$', login, name = 'login'),
-    url(r'^accounts/login/done$', login, name = 'login'),
+
+    url(r'^bonwon/$', gotobonwon, name = 'bonwon'),
+    url(r'^moonji/$', gotomoonji, name = 'moonji'),
+    url(r'^hongreung/$', gotohongreung, name = 'hongreung'),
+    url(r'^dogok/$', gotodogok, name = 'dogok'),
 
 ]
 

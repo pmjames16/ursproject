@@ -1,13 +1,19 @@
-{% load static %}
+{% load staticfiles %}
 
 <!DOCTYPE html>
 <html lang = "en">
 <head>
 	<meta charset="utf-8">
-	<title>URS</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+	<title>Unified Reservation Service</title>
 </head>
 <body>
-	<p>layout</p>
+    <div class = "page-header">
+        <a class = "home-button" href = {% url 'home' %}>URS</a>
+        <a class = "button"href = {% url 'signup' %}>회원가입</a>
+        <a class = "button"href = {% url 'login' %}>로그인</a>
+    </div>
+
 	{% block content %}
 	{% endblock %}
 </body>
