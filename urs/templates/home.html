@@ -1,7 +1,12 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <div class = "campus">
-
+<body class = "home">
+    <div class = "slogan">Unified Reservation Service</div>
+    <div class = "campus" onclick="location.href = {% url 'bonwon' %}">본원</div>
+    <div class = "campus" onclick="location.href = {% url 'moonji' %}">문지</div>
+    <div class = "campus" onclick="location.href = {% url 'hongreung' %}">홍릉</div>
+    <div class = "campus" onclick="location.href = {% url 'dogok' %}">도곡</div>
+<body>
 {% endblock %}
 

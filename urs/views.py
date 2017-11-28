@@ -4,7 +4,9 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate
 from django.http import HttpResponse
 from django.template import RequestContext
-
+from urs.models import Place
+from datetime import datetime
+from urs.calendar import monthtoname, dayday, daysweek, times
 
 def home(request):
 	return render(request, 'home.html')
@@ -41,7 +43,21 @@ def login(request):
 		return render(request, 'login.html', {'form': form})
 
 def gotobonwon(request):
-	return render(request, 'bonwon.html')
+	places = Place.objects.filter(camp = '본원')
+	month = datetime.today().month
+	day = datetime.today().day
+	time = datetime.today().hour
+	today = datetime.today()
+	name = monthtoname(month)
+	days = dayday(month)
+	daytime = times()
+
+	return render(
+		request,
+		'bonwon.html',
+		{'places':places, 'month': name, 'date': day, 'times':daytime,
+		 'time': time, 'today': today, 'days':days, 'daysweek':daysweek(days)}
+	)
 
 def gotomoonji(request):
 	return render(request, 'moonji.html')
@@ -51,4 +67,9 @@ def gotohongreung(request):
 
 def gotodogok(request):
 	return render(request, 'dogok.html')
+
+def insertplace(request, name, camp):
+	Place(name = name, camp = camp).save()
+	return render(request, 'insert.html', {'welcome text': 'Insert' + name + camp})
+
 

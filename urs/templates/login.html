@@ -1,12 +1,19 @@
+<style>
+    h2 {color: white; text-align: center; font-family: "sans-serif"; vertical-align: middle;}
+    .login {color: white; text-align: center; font-family: "Verdana";}
+</style>
+
 {% extends "layout.html" %}
 
 {% block content %}
 
-<h2>로그인</h2>
-<form method="post" action="">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="로그인" />
-</form>
+    <h2>로그인</h2>
+    <form method="post" action="" class="login">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="로그인" />
+    </form>
+
+
 
 {% endblock %}

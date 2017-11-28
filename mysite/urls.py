@@ -32,5 +32,6 @@ urlpatterns = [
     url(r'^hongreung/$', gotohongreung, name = 'hongreung'),
     url(r'^dogok/$', gotodogok, name = 'dogok'),
 
+    url(r'^insert/(?P<name>.+);(?P<camp>.+)', insertplace, name = 'insertplace')
 ]
 
