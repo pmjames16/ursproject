@@ -1,12 +1,26 @@
 {% extends "layout.html" %}
+{% load staticfiles %}
 
 {% block content %}
-<h1>회원가입</h1>
-<form method="post" action="">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" style="color: #ffcc00"><a href='home'>Sign up<a></a></button>
-</form>
+    <body class="home">
+        <div id="signup">
+            <h1 id="member">Sign Up</h1>
+            <form method="post" action="">
+                {% csrf_token %}
+                {% for field in form %}
+                  <p style="font-size: 20px;">
+                    {{ field.label_tag }}<br>
+                    {{ field }}
+                    {% for error in field.errors %}
+                      <p style="color: red">{{ error }}</p>
+                    {% endfor %}
+                  </p>
+                {% endfor %}
+                <button class="w3-button w3-pink" type="submit">Sign up</button>
+            </form>
+            {{ errors }}
+        </div>
+    </body>
 {% endblock %}
 
 <!--

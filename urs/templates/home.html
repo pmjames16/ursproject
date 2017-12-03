@@ -2,11 +2,11 @@
 
 {% block content %}
 <body class = "home">
-    <div class = "slogan">Unified Reservation Service</div>
-    <div class = "campus" onclick="location.href = {% url 'bonwon' %}">본원</div>
-    <div class = "campus" onclick="location.href = {% url 'moonji' %}">문지</div>
-    <div class = "campus" onclick="location.href = {% url 'hongreung' %}">홍릉</div>
-    <div class = "campus" onclick="location.href = {% url 'dogok' %}">도곡</div>
+    <div id = "slogan">Unified Reservation Service</div>
+    <div id = "campus" onclick="location.href = {% url 'gotocampus' campus='본원' %}">본원</div>
+    <div id = "campus" onclick="location.href = {% url 'gotocampus' campus='문지' %}">문지</div>
+    <div id = "campus" onclick="location.href = {% url 'gotocampus' campus='홍릉' %}">홍릉</div>
+    <div id = "campus" onclick="location.href = {% url 'gotocampus' campus='도곡' %}">도곡</div>
 <body>
 {% endblock %}
 

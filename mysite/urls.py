@@ -19,19 +19,17 @@ from urs.views import *
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-	url(r'^home/$', home, name = 'home'),
+	url(r'^$', home, name = 'home'),
     url(r'^admin/', admin.site.urls, name = 'admin'),
-    url(r'^place_list/$', place_list, name = 'post_list'),
-    url(r'^signup/home/$', login, name = 'after_signup'),
     
     url(r'^signup/$', signup, name = 'signup'),
-    url(r'^accounts/login/$', login, name = 'login'),
+    url(r'^accounts/login/$', signin, name = 'login'),
+    url(r'^accounts/logout/$', signout, name = 'logout'),
+    #url(r'^logout/$', logout, {'next_page': 'home/'}),
+    url(r'^(?P<campus>[가-힣\s]+)/$', gotocampus, name = 'gotocampus'),
+    url(r'^(?P<campus>[가-힣\s]+)/(?P<placeid>[0-9]+)$', placeinfo, name = 'placeinfo'),
+    url(r'^(?P<campus>[가-힣\s]+)/(?P<placeid>[0-9]+)/(?P<when>[0-9]+)$', chooseday, name = 'chooseday'),
+    url(r'^(?P<campus>[가-힣\s]+)/(?P<placeid>[0-9]+)/(?P<when>[0-9]+)/reservate$', reservate, name = 'reservate'),
 
-    url(r'^bonwon/$', gotobonwon, name = 'bonwon'),
-    url(r'^moonji/$', gotomoonji, name = 'moonji'),
-    url(r'^hongreung/$', gotohongreung, name = 'hongreung'),
-    url(r'^dogok/$', gotodogok, name = 'dogok'),
-
-    url(r'^insert/(?P<name>.+);(?P<camp>.+)', insertplace, name = 'insertplace')
 ]
 

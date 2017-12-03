@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class = "page-header">
+    </div>
+    <div class = "back">
+        <div class = "place-list">
+            <table class = "place">
+                {% for place in places %}
+                    <tr class = "areatr">
+                        <td id="pla" class = "areatd"
+                            onmouseover="this.style.backgroundColor='bisque'"
+                            onmouseout="this.style.backgroundColor='cornsilk'"
+                            style="cursor: pointer">
+                            <a href='{% url 'placeinfo' campus=camp placeid=place.id %}' style="text-decoration:none">{{ place }}</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>d
+        <div class = "calendar">
+            <p class = "month">{{ month }}</p>
+            <table class = "cal">
+                <tr class="week">
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                    <th>Sun</th>
+                </tr>
+                {% for week in daysweek %}
+                    <tr>
+                        {% for day in week %}
+                            <td id="date" class="date"
+                                onMouseover="this.style.backgroundColor='lightcyan'"
+                                onMouseout="this.style.backgroundColor=null"
+                                onclick="alert('예약할 장소를 선택한 후 날짜를 선택하세요')"
+                                style="cursor: pointer">
+                                {{ day }}
+                            </td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div id="expln" class = "explain">
+        </div>
+        <button id="rbut" class="w3-button w3-pink" type="submit" style="font-size: 40px"
+                onclick="alert('예약할 장소와 날짜를 먼저 선택해주세요')">
+                Reservation
+        </button>
+
+    </div>
+
+
+
+{% endblock %}

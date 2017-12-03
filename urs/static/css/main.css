@@ -14,8 +14,8 @@
     text-decoration: none;
     font-size: 50px;
     position: absolute;
-    left: 60px;
-    top: 20px;
+    left: 130px;
+    top: 15px;
     z-index: 10;
 }
 
@@ -25,7 +25,7 @@
     text-decoration: none;
     font-size: 25px;
     position: relative;
-    left: 650px;
+    left: 700px;
     padding: 15px;
     top: 25px;
     z-index: 10;
@@ -37,25 +37,25 @@
     text-decoration: none;
     font-size: 30px;
     position: relative;
-    left: 720px;
+    left: 750px;
     padding: 10px;
     top: 25px;
     z-index: 10;
 }
 
-div.slogan{
+#slogan{
     font-family: "Verdana";
     font-size: 65px;
     color: white;
     top: 100px;
-    left: 180px;
+    text-align: center;
     position: relative;
 
 }
 
-div.campus{
+#campus{
     top: 170px;
-    left: 90px;
+    left: 165px;
     text-align: center;
     vertical-align: middle;
     line-height: 200px;
@@ -88,9 +88,27 @@ div.back{
     position: relative;
 }
 
+#signup, #login{
+    width: 400px;
+    height: 450px;
+    background-color: white;
+    opacity: 0.75;
+    color: black;
+    margin-top: 100px;
+    text-align: center;
+    border-radius: 10px;
+    margin-left: 440px;
+    padding-top: 30px;
+}
+
+#member{
+    font-family: Verdana;
+    vertical-align: middle;
+}
+
 div.place-list{
     top: 50px;
-    left: 50px;
+    left: 75px;
     position: absolute;
     margin: 10px;
     width: 270px;
@@ -103,36 +121,23 @@ div.place-list{
 
 div.calendar{
     top: 50px;
-    left: 350px;
+    left: 370px;
     position: absolute;
     margin: 10px;
     width: 500px;
-    height: 430px;
+    height: 550px;
     background-color: white;
     border-radius: 10px;
-}
-div.timeline{
-    top: 500px;
-    left: 350px;
-    position: absolute;
-    margin: 10px;
-    width: 500px;
-    height: 100px;
-    background-color: white;
-    font-size: 40px;
-    border-radius: 10px;
-    overflow: scroll;
 }
 
 div.explain{
     top: 50px;
-    left: 870px;
+    left: 900px;
     position: absolute;
     margin: 10px;
     width: 270px;
-    height: 550px;
+    height: 350px;
     background-color: white;
-    font-size: 40px;
     border-radius: 10px;
 }
 
@@ -149,7 +154,6 @@ table.place {
     vertical-align: middle;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 td.areatd{
@@ -172,35 +176,64 @@ div.time{
     margin: 5px;
 }
 
+
 p.month{
     font-size:30px;
+    font-weight: bold;
     margin-top: 30px;
     margin-bottom: 20px;
     text-align: center;
 }
 table.cal {
+    font-family: "Nanum Gothic";
     width: auto;
-    margin-left: 25px;
-    font-size: 25px;
+    margin-top: 40px;
+    margin-left: 40px;
     overflow: scroll;
+    cursor: pointer;
 }
-th, td{
+tr.week, td.date{
     border-bottom: 1px solid lightskyblue;
-    padding: 10px;
     text-align: center;
+    margin: 15px;
+    font-size: 25px;
+    font-weight: lighter;
+    padding: 13px;
+    width: 50px;
+}
+td.cal:hover{
+    background-color: lightcyan;
 }
 
 .grey{
     background-color: whitesmoke;
 }
 
-table.timel{
-    margin-top: 15px;
-    overflow: scroll;
-    width: auto;
-    font-size: 10px;
+#rbut{
+    position: absolute;
+    top: 530px;
+    left: 910px;
 }
 
-td.time{
-    font-size: 10px;
+#expln{
+    padding: 20px;
+    height: 450px;
+    overflow: scroll;
+    text-overflow: clip;
+}
+
+#reservate{
+    position: absolute;
+    width: 500px;
+    top: 60px;
+    left: 380px;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    padding-bottom: 20px;
+}
+
+#reservform{
+    text-align: left;
+    padding-left: 60px;
 }

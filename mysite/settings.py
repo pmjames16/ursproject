@@ -31,13 +31,13 @@ ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'urs',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'urs',
 ]
 
 MIDDLEWARE = [
@@ -123,4 +123,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 LOGIN_URL = '/accounts/login/' # 기본값
 LOGOUT_URL = '/accounts/logout/' # 기본값
-LOGIN_REDIRECT_URL = '/' 
+LOGIN_REDIRECT_URL = '/'

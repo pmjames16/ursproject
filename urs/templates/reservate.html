@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class = "page-header">
+    </div>
+    <div class = "back">
+        <div id="reservate">
+            <h1>Reservation</h1>
+            <form method="post" id="reservform">
+                {% csrf_token %}
+                <p><label for="id_booker">Booker:</label>
+                    {{ form.booker }}</p>
+                <p><label for="id_camp">Campus:</label>
+                    {{ camp }}</p>
+                <p><label for="id_place">Place:</label>
+                    {{ place }}</p>
+                <p><label for="id_date">Date:</label>
+                    {{ date }}</p>
+                <p><label for="id_reason">Reason:<br></label>
+                    {{ form.reason }}</p>
+            <button class="w3-button w3-pink" type="submit" style="position: relative; left: 120px;">Reservation</button>
+            </form>
+        </div>
+
+    </div>
+
+{% endblock %}
